@@ -9,6 +9,9 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 @RestController
 public class OrderController {
@@ -21,8 +24,11 @@ public class OrderController {
     }
 
     @GetMapping("/expenses")
-    public List<Order> listOrder() {
-        return dao.getList();
+    public Map<String,List<Order>> listOrder() {
+        return dao.getList().stream()
+                .collect(Collectors.groupingBy(order1 -> order1.getDate().format(DATE_TIME_FORMATTER),
+                        TreeMap::new,
+                        Collectors.toList()));
     }
 
     @PostMapping("/expenses")
@@ -33,7 +39,7 @@ public class OrderController {
 
     @DeleteMapping("/expenses")
     public List<Order> removeOrder(@RequestParam(value = "date") String date) {
-        return dao.removeOrder(LocalDate.parse(date,DATE_TIME_FORMATTER));
+        return dao.removeOrder(LocalDate.parse(date, DATE_TIME_FORMATTER));
     }
 
     @GetMapping("/total")

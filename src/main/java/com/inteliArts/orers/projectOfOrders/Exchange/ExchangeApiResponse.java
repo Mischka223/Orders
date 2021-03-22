@@ -1,11 +1,9 @@
 package com.inteliArts.orers.projectOfOrders.Exchange;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-@Component
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ExchangeApiResponse {
         private String base;

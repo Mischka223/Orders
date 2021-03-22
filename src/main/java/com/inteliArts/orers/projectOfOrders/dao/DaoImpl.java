@@ -1,6 +1,5 @@
 package com.inteliArts.orers.projectOfOrders.dao;
 
-import com.inteliArts.orers.projectOfOrders.Comparator.CompareByDate;
 import com.inteliArts.orers.projectOfOrders.convertor.ConvertorApi;
 import com.inteliArts.orers.projectOfOrders.model.Order;
 import com.inteliArts.orers.projectOfOrders.model.TotalResponse;
@@ -8,7 +7,9 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Component
@@ -25,7 +26,6 @@ public class DaoImpl implements Dao {
     }
 
     public List<Order> getList() {
-        Collections.sort(list, new CompareByDate());
         return list;
     }
 
@@ -48,7 +48,6 @@ public class DaoImpl implements Dao {
         double sum = list.stream()
                 .mapToDouble(order -> order.getAmount() / map.get(order.getCurrency()))
                 .sum();
-
         return new TotalResponse(sum,base);
     }
 }

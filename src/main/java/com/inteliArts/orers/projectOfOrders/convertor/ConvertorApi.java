@@ -2,6 +2,7 @@ package com.inteliArts.orers.projectOfOrders.convertor;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.inteliArts.orers.projectOfOrders.Exchange.ExchangeApiResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -11,17 +12,12 @@ import java.util.Map;
 @Component
 public class ConvertorApi {
 
-    final ExchangeApiResponse response;
-    private static final String url_str = "https://api.exchangerate.host/latest?base=";
-    private static final ObjectMapper mapper = new ObjectMapper();
-
-    public ConvertorApi(ExchangeApiResponse response) {
-        this.response = response;
-    }
+    private static final String URL = "https://api.exchangerate.host/latest?base=";
+    private static final ObjectMapper MAPPER = new ObjectMapper();
 
     public  Map<String, Double> getRates(String currency) throws IOException {
-        URL url = new URL(url_str + currency);
-        ExchangeApiResponse response = mapper.readValue(url, ExchangeApiResponse.class);
+        URL url = new URL(URL + currency);
+        ExchangeApiResponse response = MAPPER.readValue(url, ExchangeApiResponse.class);
         Map<String, Double> rates = response.getRates();
         return rates;
     }
