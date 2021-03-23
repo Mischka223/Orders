@@ -1,8 +1,8 @@
-package com.inteliArts.orers.projectOfOrders.controllers;
+package com.intelliArts.orers.projectOfOrders.controllers;
 
-import com.inteliArts.orers.projectOfOrders.dao.Dao;
-import com.inteliArts.orers.projectOfOrders.model.Order;
-import com.inteliArts.orers.projectOfOrders.model.TotalResponse;
+import com.intelliArts.orers.projectOfOrders.dao.Dao;
+import com.intelliArts.orers.projectOfOrders.model.Order;
+import com.intelliArts.orers.projectOfOrders.model.TotalResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;

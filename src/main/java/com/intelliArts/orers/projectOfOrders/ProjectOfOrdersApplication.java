@@ -1,10 +1,9 @@
-package com.inteliArts.orers.projectOfOrders;
+package com.intelliArts.orers.projectOfOrders;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 
 @SpringBootApplication

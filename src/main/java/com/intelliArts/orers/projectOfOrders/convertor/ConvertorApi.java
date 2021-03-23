@@ -1,8 +1,7 @@
-package com.inteliArts.orers.projectOfOrders.convertor;
+package com.intelliArts.orers.projectOfOrders.convertor;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.inteliArts.orers.projectOfOrders.Exchange.ExchangeApiResponse;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.intelliArts.orers.projectOfOrders.Exchange.ExchangeApiResponse;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;

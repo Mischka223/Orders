@@ -1,4 +1,4 @@
-package com.inteliArts.orers.projectOfOrders.model;
+package com.intelliArts.orers.projectOfOrders.model;
 
 public class TotalResponse {
     private double total;

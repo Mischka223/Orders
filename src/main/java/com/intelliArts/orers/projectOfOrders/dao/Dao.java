@@ -1,7 +1,7 @@
-package com.inteliArts.orers.projectOfOrders.dao;
+package com.intelliArts.orers.projectOfOrders.dao;
 
-import com.inteliArts.orers.projectOfOrders.model.Order;
-import com.inteliArts.orers.projectOfOrders.model.TotalResponse;
+import com.intelliArts.orers.projectOfOrders.model.Order;
+import com.intelliArts.orers.projectOfOrders.model.TotalResponse;
 
 import java.io.IOException;
 import java.time.LocalDate;

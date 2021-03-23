@@ -1,4 +1,4 @@
-package com.inteliArts.orers.projectOfOrders.model;
+package com.intelliArts.orers.projectOfOrders.model;
 
 
 import org.springframework.stereotype.Component;

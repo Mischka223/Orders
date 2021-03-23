@@ -1,4 +1,4 @@
-package com.inteliArts.orers.projectOfOrders.Exchange;
+package com.intelliArts.orers.projectOfOrders.Exchange;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

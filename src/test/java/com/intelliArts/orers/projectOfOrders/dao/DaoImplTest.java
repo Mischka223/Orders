@@ -1,7 +1,7 @@
-package com.inteliArts.orers.projectOfOrders.dao;
+package com.intelliArts.orers.projectOfOrders.dao;
 
-import com.inteliArts.orers.projectOfOrders.convertor.ConvertorApi;
-import com.inteliArts.orers.projectOfOrders.model.Order;
+import com.intelliArts.orers.projectOfOrders.convertor.ConvertorApi;
+import com.intelliArts.orers.projectOfOrders.model.Order;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

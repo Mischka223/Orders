@@ -1,4 +1,4 @@
-package com.inteliArts.orers.projectOfOrders;
+package com.intelliArts.orers.projectOfOrders;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
