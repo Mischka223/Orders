@@ -24,4 +24,12 @@ public class TotalResponse {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+
+    @Override
+    public String toString() {
+        return "TotalResponse{" +
+                "total=" + total +
+                ", currency='" + currency + '\'' +
+                '}';
+    }
 }

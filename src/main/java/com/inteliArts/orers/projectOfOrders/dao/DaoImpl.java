@@ -16,17 +16,15 @@ import java.util.stream.Collectors;
 public class DaoImpl implements Dao {
     private static long idCursor = 0;
     public final ConvertorApi convertorApi;
-    private final Order order;
 
     List<Order> list = new LinkedList<>();
 
-    public DaoImpl(Order order, ConvertorApi convertorApi) {
-        this.order = order;
+    public DaoImpl(ConvertorApi convertorApi) {
         this.convertorApi = convertorApi;
     }
 
     public List<Order> getList() {
-        return list;
+        return list.stream().filter(order -> order!=null).collect(Collectors.toList());
     }
 
     public Order addOrder(Order order) {
@@ -48,6 +46,6 @@ public class DaoImpl implements Dao {
         double sum = list.stream()
                 .mapToDouble(order -> order.getAmount() / map.get(order.getCurrency()))
                 .sum();
-        return new TotalResponse(sum,base);
+        return new TotalResponse(sum, base);
     }
 }

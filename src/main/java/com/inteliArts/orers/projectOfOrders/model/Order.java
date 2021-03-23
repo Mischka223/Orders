@@ -16,6 +16,13 @@ public class Order {
     public Order() {
     }
 
+    public Order(LocalDate date, double amount, String currency, String product) {
+        this.date = date;
+        this.amount = amount;
+        this.currency = currency;
+        this.product = product;
+    }
+
     public long getId() {
         return id;
     }
