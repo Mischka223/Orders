@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
@@ -35,7 +36,7 @@ public class DaoImplTest {
         dao.addOrder(order);
         dao.addOrder(order1);
         List<Order> list = dao.getList();
-        List<Order> orderListExpected = dao.list.stream().filter(order1 -> order1 != null).collect(Collectors.toList());
+        List<Order> orderListExpected = dao.list.stream().filter(Objects::nonNull).collect(Collectors.toList());
         assertEquals(list,orderListExpected);
     }
 

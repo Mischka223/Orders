@@ -14,7 +14,7 @@ public class ConvertorApi {
     private static final String URL = "https://api.exchangerate.host/latest?base=";
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
-    public  Map<String, Double> getRates(String currency) throws IOException {
+    public Map<String, Double> getRates(String currency) throws IOException {
         URL url = new URL(URL + currency);
         ExchangeApiResponse response = MAPPER.readValue(url, ExchangeApiResponse.class);
         Map<String, Double> rates = response.getRates();

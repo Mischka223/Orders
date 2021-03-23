@@ -24,7 +24,7 @@ public class OrderController {
     }
 
     @GetMapping("/expenses")
-    public Map<String,List<Order>> listOrder() {
+    public Map<String, List<Order>> listOrder() {
         return dao.getList().stream()
                 .collect(Collectors.groupingBy(order1 -> order1.getDate().format(DATE_TIME_FORMATTER),
                         TreeMap::new,

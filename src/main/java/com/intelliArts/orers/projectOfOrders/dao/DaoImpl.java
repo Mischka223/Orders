@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Component
@@ -24,7 +25,7 @@ public class DaoImpl implements Dao {
     }
 
     public List<Order> getList() {
-        return list.stream().filter(order -> order!=null).collect(Collectors.toList());
+        return list.stream().filter(Objects::nonNull).collect(Collectors.toList());
     }
 
     public Order addOrder(Order order) {
