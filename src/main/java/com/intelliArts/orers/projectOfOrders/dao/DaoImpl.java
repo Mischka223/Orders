@@ -2,14 +2,11 @@ package com.intelliArts.orers.projectOfOrders.dao;
 
 import com.intelliArts.orers.projectOfOrders.convertor.ConvertorApi;
 import com.intelliArts.orers.projectOfOrders.model.Order;
-import com.intelliArts.orers.projectOfOrders.model.TotalResponse;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
@@ -40,13 +37,5 @@ public class DaoImpl implements Dao {
                 .collect(Collectors.toList());
         list.removeAll(toRemove);
         return toRemove;
-    }
-
-    public TotalResponse total(String base) throws IOException {
-        Map<String, Double> map = convertorApi.getRates(base);
-        double sum = list.stream()
-                .mapToDouble(order -> order.getAmount() / map.get(order.getCurrency()))
-                .sum();
-        return new TotalResponse(sum, base);
     }
 }

@@ -3,14 +3,23 @@ package com.intelliArts.orers.projectOfOrders.model;
 
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.PositiveOrZero;
 import java.time.LocalDate;
 
 @Component
 public class Order {
-    private long id;
+    private Long id;
+    @NotNull(message = "the date should not be empty")
+    @PastOrPresent(message = "the date should not be in future")
     private LocalDate date;
+    @PositiveOrZero(message = "amount should be greatest than 0")
     private double amount;
+    @NotEmpty(message = "currency should not be empty")
     private String currency;
+    @NotEmpty(message = "name of product should not be empty")
     private String product;
 
     public Order() {
